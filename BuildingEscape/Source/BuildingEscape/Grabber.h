@@ -9,6 +9,7 @@
 #include "DrawDebugHelpers.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "Runtime/Engine/Classes/Engine/EngineTypes.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 
 #include "Grabber.generated.h"
 
@@ -33,5 +34,5 @@ public:
 private:
 		float Reach = 100.f;
 		
-	
+		UPhysicsHandleComponent* PhysicsHandle = nullptr;
 };
