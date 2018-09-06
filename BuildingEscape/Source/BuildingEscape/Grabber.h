@@ -10,6 +10,7 @@
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "Runtime/Engine/Classes/Engine/EngineTypes.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Runtime/Engine/Classes/Components/InputComponent.h"
 
 #include "Grabber.generated.h"
 
@@ -35,4 +36,16 @@ private:
 		float Reach = 100.f;
 		
 		UPhysicsHandleComponent* PhysicsHandle = nullptr;
+		UInputComponent* InputComponent = nullptr;
+
+		//RAy-cast and grav whats in reach
+		void Grab();
+		//realease what was grabbed
+		void Release();
+		//Find attached physics component
+		void FindPhysicsHandleComponent();
+		//Setup (assumed) attached InputComponent
+		void SetupInputComponent();
+		//Return hit for first physics body in reach
+		const FHitResult GetFirstPhysicsBodyInReach();
 };
